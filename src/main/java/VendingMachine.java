@@ -47,4 +47,8 @@ public class VendingMachine {
     }
   }
 
+  public boolean checkInventory(String productString) {
+    return true;
+  }
+
 }
