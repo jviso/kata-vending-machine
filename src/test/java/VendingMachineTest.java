@@ -69,7 +69,7 @@ public class VendingMachineTest {
   }
 
   @Test
-  public void whenColaIsRequestedAndUserHasEnteredEnoughMoneyVendingMachineAllowsThePurchase() {
+  public void whenColaIsRequestedAndUserHasEnteredFourQuartersVendingMachineAllowsThePurchase() {
     for (int i = 0; i < 4; i++) {
       vendingMachine.addCoin("quarter");
     }
@@ -77,12 +77,12 @@ public class VendingMachineTest {
   }
 
   @Test
-  public void whenColaIsRequestedAndUserHasNotEnteredEnoughMoneyVendingMachineDoesNotAllowThePurchase() {
+  public void whenColaIsRequestedAndUserHasNotEnteredMoneyVendingMachineDoesNotAllowThePurchase() {
     assertEquals(false, vendingMachine.canPurchase("cola"));
   }
 
   @Test
-  public void whenChipsAreRequestedAndUserHasEnteredEnoughMoneyVendingMachineAllowsThePurchase() {
+  public void whenChipsAreRequestedAndUserHasEnteredFiftyCentsVendingMachineAllowsThePurchase() {
     vendingMachine.addCoin("quarter");
     vendingMachine.addCoin("quarter");
     assertEquals(true, vendingMachine.canPurchase("chips"));
