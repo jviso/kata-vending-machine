@@ -1,0 +1,8 @@
+apply plugin: 'java'
+
+test {
+  testLogging {
+    exceptionFormat = 'full'
+    events = ["passed", "failed", "skipped"]
+  }
+}
