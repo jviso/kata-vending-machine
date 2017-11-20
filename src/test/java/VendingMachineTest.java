@@ -12,8 +12,9 @@ public class VendingMachineTest {
   }
 
   @Test
-  public void whenVendingMachineReceivesACoinItReturnsTheValueInCents() {
-    assertEquals(5, vendingMachine.addCoin("nickel"));
+  public void whenVendingMachineReceivesANickelCurrentTotalIsFiveCents() {
+    vendingMachine.addCoin("nickel");
+    assertEquals(5, vendingMachine.getCurrentTotalInCents());
   }
 
   @Test
