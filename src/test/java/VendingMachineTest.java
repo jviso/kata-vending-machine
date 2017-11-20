@@ -9,4 +9,10 @@ public class VendingMachineTest {
     assertEquals(5, vendingMachine.addCoin("nickel"));
   }
 
+  @Test
+  public void whenVendingMachineReceivesAProductRequestItReturnsTheProductName() {
+    VendingMachine vendingMachine = new VendingMachine();
+    assertEquals("COLA DISPENSED", vendingMachine.requestProduct("cola"));
+  }
+
 }

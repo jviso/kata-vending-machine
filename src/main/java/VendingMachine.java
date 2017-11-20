@@ -4,4 +4,8 @@ public class VendingMachine {
     return 5;
   }
 
+  public String requestProduct(String productString) {
+    return "COLA DISPENSED";
+  }
+
 }
