@@ -38,4 +38,8 @@ public class VendingMachine {
     }
   }
 
+  public boolean canPurchase(String productString) {
+    return true;
+  }
+
 }
