@@ -81,4 +81,11 @@ public class VendingMachineTest {
     assertEquals(false, vendingMachine.canPurchase("cola"));
   }
 
+  @Test
+  public void whenChipsAreRequestedAndUserHasEnteredEnoughMoneyVendingMachineAllowsThePurchase() {
+    vendingMachine.addCoin("quarter");
+    vendingMachine.addCoin("quarter");
+    assertEquals(true, vendingMachine.canPurchase("chips"));
+  }
+
 }
