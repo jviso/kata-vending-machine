@@ -27,7 +27,12 @@ public class VendingMachine {
   }
 
   public int getPrice(String productString) {
-    return 100;
+    if (productString.equals("cola")) {
+      return 100;
+    }
+    else {
+      return 50;
+    }
   }
 
 }
