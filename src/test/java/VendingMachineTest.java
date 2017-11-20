@@ -29,4 +29,11 @@ public class VendingMachineTest {
     assertEquals(0, vendingMachine.getCurrentTotalInCents());
   }
 
+  @Test
+  public void whenVendingMachineReceivesTwoNickelsCurrentTotalIsTenCents() {
+    vendingMachine.addCoin("nickel");
+    vendingMachine.addCoin("nickel");
+    assertEquals(10, vendingMachine.getCurrentTotalInCents());
+  }
+
 }

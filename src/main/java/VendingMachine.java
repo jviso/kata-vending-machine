@@ -7,7 +7,7 @@ public class VendingMachine {
   }
 
   public void addCoin(String coinString) {
-    currentTotalInCents = 5;
+    currentTotalInCents += 5;
   }
 
   public String requestProduct(String productString) {
