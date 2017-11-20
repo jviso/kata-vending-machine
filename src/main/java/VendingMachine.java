@@ -7,7 +7,12 @@ public class VendingMachine {
   }
 
   public void addCoin(String coinString) {
-    currentTotalInCents += 5;
+    if (coinString.equals("nickel")) {
+      currentTotalInCents += 5;
+    }
+    else {
+      currentTotalInCents += 10;
+    }
   }
 
   public String requestProduct(String productString) {
