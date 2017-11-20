@@ -39,7 +39,12 @@ public class VendingMachine {
   }
 
   public boolean canPurchase(String productString) {
-    return true;
+    if (currentTotalInCents >= 100) {
+      return true;
+    }
+    else {
+      return false;
+    }
   }
 
 }
