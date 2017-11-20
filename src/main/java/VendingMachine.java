@@ -30,8 +30,11 @@ public class VendingMachine {
     if (productString.equals("cola")) {
       return 100;
     }
-    else {
+    else if (productString.equals("chips")) {
       return 50;
+    }
+    else {
+      return 65;
     }
   }
 

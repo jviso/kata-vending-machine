@@ -63,4 +63,9 @@ public class VendingMachineTest {
     assertEquals(50, vendingMachine.getPrice("chips"));
   }
 
+  @Test
+  public void whenCandyIsRequestedVendingMachineKnowsThePriceIs65Cents() {
+    assertEquals(65, vendingMachine.getPrice("candy"));
+  }
+
 }
