@@ -22,4 +22,11 @@ public class VendingMachineTest {
     assertEquals("COLA DISPENSED", vendingMachine.requestProduct("cola"));
   }
 
+  @Test
+  public void whenUserRequestsCoinReturnCurrentTotalIsSetToZero() {
+    vendingMachine.addCoin("nickel");
+    vendingMachine.returnAllCoins();
+    assertEquals(0, vendingMachine.getCurrentTotalInCents());
+  }
+
 }
