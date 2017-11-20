@@ -53,4 +53,9 @@ public class VendingMachineTest {
     assertEquals(5, vendingMachine.getCurrentTotalInCents());
   }
 
+  @Test
+  public void whenColaIsRequestedVendingMachineKnowsTheCostIs100Cents() {
+    assertEquals(100, vendingMachine.getPrice("cola"));
+  }
+
 }

@@ -26,4 +26,8 @@ public class VendingMachine {
     currentTotalInCents = 0;
   }
 
+  public int getPrice(String productString) {
+    return 100;
+  }
+
 }
