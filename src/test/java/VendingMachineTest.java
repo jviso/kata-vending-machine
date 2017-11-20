@@ -18,11 +18,6 @@ public class VendingMachineTest {
   }
 
   @Test
-  public void whenVendingMachineReceivesAProductRequestItReturnsTheProductName() {
-    assertEquals("COLA DISPENSED", vendingMachine.requestProduct("cola"));
-  }
-
-  @Test
   public void whenUserRequestsCoinReturnCurrentTotalIsSetToZero() {
     vendingMachine.addCoin("nickel");
     vendingMachine.returnAllCoins();
