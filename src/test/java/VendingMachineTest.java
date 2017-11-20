@@ -43,4 +43,19 @@ public class VendingMachineTest {
     assertEquals(15, vendingMachine.getCurrentTotalInCents());
   }
 
+  @Test
+  public void whenVendingMachineReceivesQuarterAndDimeAndNickelCurrentTotalIsFortyCents() {
+    vendingMachine.addCoin("quarter");
+    vendingMachine.addCoin("dime");
+    vendingMachine.addCoin("nickel");
+    assertEquals(40, vendingMachine.getCurrentTotalInCents());
+  }
+
+  @Test
+  public void whenVendingMachineReceivesNickelAndPennyCurrentTotalIsFiveCents() {
+    vendingMachine.addCoin("nickel");
+    vendingMachine.addCoin("penny");
+    assertEquals(5, vendingMachine.getCurrentTotalInCents());
+  }
+
 }

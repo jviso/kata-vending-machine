@@ -10,8 +10,11 @@ public class VendingMachine {
     if (coinString.equals("nickel")) {
       currentTotalInCents += 5;
     }
-    else {
+    else if (coinString.equals("dime")) {
       currentTotalInCents += 10;
+    }
+    else if (coinString.equals("quarter")) {
+      currentTotalInCents += 25;
     }
   }
 
