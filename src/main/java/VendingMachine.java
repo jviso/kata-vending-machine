@@ -40,6 +40,7 @@ public class VendingMachine {
   }
 
   public String requestProduct(String productString) {
+    currentColaInventory -= 1;
     return "COLA DISPENSED";
   }
 
