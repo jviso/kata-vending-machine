@@ -58,8 +58,13 @@ public class VendingMachine {
           return "CHIPS DISPENSED";
         }
       case "candy":
-        currentCandyInventory -= 1;
-        return "CANDY DISPENSED";
+        if (!checkIfProductIsInStock(productString)) {
+          return "SOLD OUT";
+        }
+        else {
+          currentCandyInventory -= 1;
+          return "CANDY DISPENSED";
+        }
       default:
         return "ERROR: INVALID PRODUCT";
     }
