@@ -93,4 +93,11 @@ public class VendingMachineTest {
     assertEquals(true, vendingMachine.checkInventory("cola"));
   }
 
+  @Test
+  public void whenVendingMachineIsNewThereIsAtLeastOneColaChipsAndCandy() {
+    assertEquals(true, vendingMachine.getColaInventory() > 0);
+    assertEquals(true, vendingMachine.getChipsInventory() > 0);
+    assertEquals(true, vendingMachine.getCandyInventory() > 0);
+  }
+
 }

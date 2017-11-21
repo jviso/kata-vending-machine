@@ -1,9 +1,30 @@
 public class VendingMachine {
 
   private int currentTotalInCents;
+  private int currentColaInventory;
+  private int currentChipsInventory;
+  private int currentCandyInventory;
+
+  public VendingMachine() {
+    currentColaInventory = 1;
+    currentChipsInventory = 1;
+    currentCandyInventory = 1;
+  }
 
   public int getCurrentTotalInCents() {
     return currentTotalInCents;
+  }
+
+  public int getColaInventory() {
+    return currentColaInventory;
+  }
+
+  public int getChipsInventory() {
+    return currentChipsInventory;
+  }
+
+  public int getCandyInventory() {
+    return currentCandyInventory;
   }
 
   public void addCoin(String coinString) {
