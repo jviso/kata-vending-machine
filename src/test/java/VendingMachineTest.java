@@ -53,6 +53,13 @@ public class VendingMachineTest {
   }
 
   @Test
+  public void whenVendingMachineReceivesACoinItReturnsTheTotal() {
+    vendingMachine.addCoin("nickel");
+    vendingMachine.addCoin("dime");
+    assertEquals("$0.40", vendingMachine.addCoin("quarter"));
+  }    
+
+  @Test
   public void whenColaIsRequestedVendingMachineKnowsThePriceIs100Cents() {
     assertEquals(100, vendingMachine.getPrice("cola"));
   }

@@ -32,7 +32,7 @@ public class VendingMachine {
     return lastReturnCoinMessage;
   }
 
-  public void addCoin(String coinString) {
+  public String addCoin(String coinString) {
     if (coinString.equals("nickel")) {
       currentTotalInCents += 5;
     }
@@ -42,6 +42,7 @@ public class VendingMachine {
     else if (coinString.equals("quarter")) {
       currentTotalInCents += 25;
     }
+    return String.format("$%.2f", (currentTotalInCents / 100.0));
   }
 
   public String requestProduct(String productString) {
