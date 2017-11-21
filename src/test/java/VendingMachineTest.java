@@ -155,4 +155,12 @@ public class VendingMachineTest {
     assertEquals(false, vendingMachine.checkIfProductIsInStock("candy"));
   }
 
+  @Test
+  public void whenColaIsNotInStockColaRequestReturnsSoldOut() {
+    while (vendingMachine.getColaInventory() > 0) {
+      vendingMachine.requestProduct("cola");
+    }
+    assertEquals("SOLD OUT", vendingMachine.requestProduct("cola"));
+  }
+
 }

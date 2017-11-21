@@ -41,8 +41,13 @@ public class VendingMachine {
 
   public String requestProduct(String productString) {
     if (productString.equals("cola")) {
+      if (!checkIfProductIsInStock(productString)) {
+        return "SOLD OUT";
+      }
+      else {
       currentColaInventory -= 1;
       return "COLA DISPENSED";
+      }
     }
     else if (productString.equals("chips")) {
       currentChipsInventory -= 1;
