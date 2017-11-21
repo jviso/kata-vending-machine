@@ -110,6 +110,13 @@ public class VendingMachineTest {
   }
 
   @Test
+  public void whenCandyIsPurchasedCandyInventoryDecreasesByOne() {
+    int initialCandyInventory = vendingMachine.getCandyInventory();
+    vendingMachine.requestProduct("candy");
+    assertEquals((initialCandyInventory - 1), vendingMachine.getCandyInventory());
+  }
+
+  @Test
   public void whenColaIsRequestedAndColaIsInStockInventoryCheckerReturnsTrue() {
     assertEquals(true, vendingMachine.checkIfProductIsInStock("cola"));
   }
