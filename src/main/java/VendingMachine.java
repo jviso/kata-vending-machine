@@ -83,8 +83,11 @@ public class VendingMachine {
     if (productString.equals("cola")) {
       return (getColaInventory() > 0);
     }
-    else {
+    else if (productString.equals("chips")) {
       return (getChipsInventory() > 0);
+    }
+    else {
+      return true;
     }
   }
 
