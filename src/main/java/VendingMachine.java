@@ -80,11 +80,11 @@ public class VendingMachine {
   }
 
   public boolean checkIfProductIsInStock(String productString) {
-    if (getColaInventory() > 0) {
-      return true;
+    if (productString.equals("cola")) {
+      return (getColaInventory() > 0);
     }
     else {
-      return false;
+      return true;
     }
   }
 
