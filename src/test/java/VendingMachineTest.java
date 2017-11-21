@@ -24,13 +24,6 @@ public class VendingMachineTest {
   }
 
   @Test
-  public void whenUserRequestsCoinReturnCurrentTotalIsSetToZero() {
-    vendingMachine.addCoin("nickel");
-    vendingMachine.returnAllCoins();
-    assertEquals(0, vendingMachine.getCurrentTotalInCents());
-  }
-
-  @Test
   public void whenVendingMachineReceivesTwoNickelsCurrentTotalIsTenCents() {
     vendingMachine.addCoin("nickel");
     vendingMachine.addCoin("nickel");
@@ -197,6 +190,19 @@ public class VendingMachineTest {
     assertEquals("PRICE: $1.00", vendingMachine.requestProduct("cola"));
     assertEquals("PRICE: $0.50", vendingMachine.requestProduct("chips"));
     assertEquals("PRICE: $0.65", vendingMachine.requestProduct("candy"));
+  }
+
+  @Test
+  public void whenUserRequestsCoinReturnCurrentTotalIsSetToZero() {
+    vendingMachine.addCoin("nickel");
+    vendingMachine.returnAllCoins();
+    assertEquals(0, vendingMachine.getCurrentTotalInCents());
+  }
+
+  @Test
+  public void whenCoinsAreReturnedUserKnowsHowMuchMoneyIsReturned() {
+    addOneHundredCents();
+    assertEquals("RETURNED: $1.00", vendingMachine.returnAllCoins());
   }
 
 }

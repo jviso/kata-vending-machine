@@ -65,8 +65,10 @@ public class VendingMachine {
     }
   }
 
-  public void returnAllCoins() {
+  public String returnAllCoins() {
+    int previousTotalInCents = getCurrentTotalInCents();
     currentTotalInCents = 0;
+    return String.format("RETURNED: $%.2f", (previousTotalInCents / 100.0));
   }
 
   public int getPrice(String productString) {
