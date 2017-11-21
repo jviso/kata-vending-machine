@@ -40,8 +40,14 @@ public class VendingMachine {
   }
 
   public String requestProduct(String productString) {
-    currentColaInventory -= 1;
-    return "COLA DISPENSED";
+    if (productString.equals("cola")) {
+      currentColaInventory -= 1;
+      return "COLA DISPENSED";
+    }
+    else {
+      currentChipsInventory -= 1;
+      return "CHIPS DISPENSED";
+    }
   }
 
   public void returnAllCoins() {
