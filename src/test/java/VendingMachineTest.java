@@ -163,4 +163,12 @@ public class VendingMachineTest {
     assertEquals("SOLD OUT", vendingMachine.requestProduct("cola"));
   }
 
+  @Test
+  public void whenChipsAreNotInStockChipsRequestReturnsSoldOut() {
+    while (vendingMachine.getChipsInventory() > 0) {
+      vendingMachine.requestProduct("chips");
+    }
+    assertEquals("SOLD OUT", vendingMachine.requestProduct("chips"));
+  }
+
 }

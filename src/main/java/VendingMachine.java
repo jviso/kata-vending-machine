@@ -50,8 +50,13 @@ public class VendingMachine {
           return "COLA DISPENSED";
         }
       case "chips":
-        currentChipsInventory -= 1;
-        return "CHIPS DISPENSED";
+        if (!checkIfProductIsInStock(productString)) {
+          return "SOLD OUT";
+        }
+        else {
+          currentChipsInventory -= 1;
+          return "CHIPS DISPENSED";
+        }
       case "candy":
         currentCandyInventory -= 1;
         return "CANDY DISPENSED";
