@@ -11,6 +11,12 @@ public class VendingMachineTest {
     vendingMachine = new VendingMachine();
   }
 
+  public void addOneHundredCents() {
+    for (int i = 0; i < 4; i++) {
+      vendingMachine.addCoin("quarter");
+    }
+  }
+
   @Test
   public void whenVendingMachineReceivesANickelCurrentTotalIsFiveCents() {
     vendingMachine.addCoin("nickel");
@@ -70,9 +76,7 @@ public class VendingMachineTest {
 
   @Test
   public void whenColaIsRequestedAndUserHasEnteredFourQuartersVendingMachineAllowsThePurchase() {
-    for (int i = 0; i < 4; i++) {
-      vendingMachine.addCoin("quarter");
-    }
+    addOneHundredCents();
     assertEquals(true, vendingMachine.checkIfUserHasEnteredSufficientMoneyToBuyProduct("cola"));
   }
 
