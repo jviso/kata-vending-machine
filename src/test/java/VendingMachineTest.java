@@ -134,4 +134,12 @@ public class VendingMachineTest {
     assertEquals(true, vendingMachine.checkIfProductIsInStock("chips"));
   }
 
+  @Test
+  public void whenChipsAreNotInStockInventoryCheckerReturnsFalse() {
+    while (vendingMachine.getChipsInventory() > 0) {
+      vendingMachine.requestProduct("chips");
+    }
+    assertEquals(false, vendingMachine.checkIfProductIsInStock("chips"));
+  }
+
 }

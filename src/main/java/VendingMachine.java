@@ -84,7 +84,7 @@ public class VendingMachine {
       return (getColaInventory() > 0);
     }
     else {
-      return true;
+      return (getChipsInventory() > 0);
     }
   }
 
