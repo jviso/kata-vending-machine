@@ -46,6 +46,10 @@ public class VendingMachine {
     if (!checkIfUserHasEnteredSufficientMoneyToBuyProduct(productString)) {
       return String.format("PRICE: $%.2f", (getPrice(productString) / 100.0));
     }
+    return dispenseProduct(productString);
+  }
+
+  public String dispenseProduct(String productString) {
     switch (productString) {
       case "cola":
         currentColaInventory -= 1;
