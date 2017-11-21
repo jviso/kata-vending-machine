@@ -73,24 +73,19 @@ public class VendingMachineTest {
     for (int i = 0; i < 4; i++) {
       vendingMachine.addCoin("quarter");
     }
-    assertEquals(true, vendingMachine.canPurchase("cola"));
+    assertEquals(true, vendingMachine.checkIfUserHasEnteredSufficientMoneyToBuyProduct("cola"));
   }
 
   @Test
   public void whenColaIsRequestedAndUserHasNotEnteredMoneyVendingMachineDoesNotAllowThePurchase() {
-    assertEquals(false, vendingMachine.canPurchase("cola"));
+    assertEquals(false, vendingMachine.checkIfUserHasEnteredSufficientMoneyToBuyProduct("cola"));
   }
 
   @Test
   public void whenChipsAreRequestedAndUserHasEnteredFiftyCentsVendingMachineAllowsThePurchase() {
     vendingMachine.addCoin("quarter");
     vendingMachine.addCoin("quarter");
-    assertEquals(true, vendingMachine.canPurchase("chips"));
-  }
-
-  @Test
-  public void whenColaIsRequestedAndColaIsInStockInventoryCheckerReturnsTrue() {
-    assertEquals(true, vendingMachine.checkInventory("cola"));
+    assertEquals(true, vendingMachine.checkIfUserHasEnteredSufficientMoneyToBuyProduct("chips"));
   }
 
   @Test
@@ -98,6 +93,11 @@ public class VendingMachineTest {
     assertEquals(true, vendingMachine.getColaInventory() > 0);
     assertEquals(true, vendingMachine.getChipsInventory() > 0);
     assertEquals(true, vendingMachine.getCandyInventory() > 0);
+  }
+
+  @Test
+  public void whenColaIsRequestedAndColaIsInStockInventoryCheckerReturnsTrue() {
+    assertEquals(true, vendingMachine.checkInventory("cola"));
   }
 
 }

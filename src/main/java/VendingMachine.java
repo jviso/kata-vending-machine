@@ -59,7 +59,7 @@ public class VendingMachine {
     }
   }
 
-  public boolean canPurchase(String productString) {
+  public boolean checkIfUserHasEnteredSufficientMoneyToBuyProduct(String productString) {
     if (currentTotalInCents >= getPrice(productString)) {
       return true;
     }
