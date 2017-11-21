@@ -117,12 +117,12 @@ public class VendingMachineTest {
   }
 
   @Test
-  public void whenColaIsInStockInventoryCheckerReturnsTrue() {
+  public void whenColaIsInStockInventoryCheckOfColaReturnsTrue() {
     assertEquals(true, vendingMachine.checkIfProductIsInStock("cola"));
   }
 
   @Test
-  public void whenColaIsNotInStockInventoryCheckerReturnsFalse() {
+  public void whenColaIsNotInStockInventoryCheckOfColaReturnsFalse() {
     while (vendingMachine.getColaInventory() > 0) {
       vendingMachine.requestProduct("cola");
     }
@@ -130,12 +130,12 @@ public class VendingMachineTest {
   }
 
   @Test
-  public void whenChipsAreInStockInventoryCheckerReturnsTrue() {
+  public void whenChipsAreInStockInventoryCheckOfChipsReturnsTrue() {
     assertEquals(true, vendingMachine.checkIfProductIsInStock("chips"));
   }
 
   @Test
-  public void whenChipsAreNotInStockInventoryCheckerReturnsFalse() {
+  public void whenChipsAreNotInStockInventoryCheckOfChipsReturnsFalse() {
     while (vendingMachine.getChipsInventory() > 0) {
       vendingMachine.requestProduct("chips");
     }
