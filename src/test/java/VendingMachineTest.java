@@ -102,6 +102,7 @@ public class VendingMachineTest {
   @Test
   public void whenColaIsPurchasedColaInventoryDecreasesByOne() {
     int initialColaInventory = vendingMachine.getColaInventory();
+    addOneHundredCents();
     vendingMachine.requestProduct("cola");
     assertEquals((initialColaInventory - 1), vendingMachine.getColaInventory());
   }
@@ -109,6 +110,7 @@ public class VendingMachineTest {
   @Test
   public void whenChipsArePurchasedChipsInventoryDecreasesByOne() {
     int initialChipsInventory = vendingMachine.getChipsInventory();
+    addOneHundredCents();
     vendingMachine.requestProduct("chips");
     assertEquals((initialChipsInventory - 1), vendingMachine.getChipsInventory());
   }
@@ -116,6 +118,7 @@ public class VendingMachineTest {
   @Test
   public void whenCandyIsPurchasedCandyInventoryDecreasesByOne() {
     int initialCandyInventory = vendingMachine.getCandyInventory();
+    addOneHundredCents();
     vendingMachine.requestProduct("candy");
     assertEquals((initialCandyInventory - 1), vendingMachine.getCandyInventory());
   }
@@ -128,6 +131,7 @@ public class VendingMachineTest {
   @Test
   public void whenColaIsNotInStockInventoryCheckOfColaReturnsFalse() {
     while (vendingMachine.getColaInventory() > 0) {
+      addOneHundredCents();
       vendingMachine.requestProduct("cola");
     }
     assertEquals(false, vendingMachine.checkIfProductIsInStock("cola"));
@@ -141,6 +145,7 @@ public class VendingMachineTest {
   @Test
   public void whenChipsAreNotInStockInventoryCheckOfChipsReturnsFalse() {
     while (vendingMachine.getChipsInventory() > 0) {
+      addOneHundredCents();
       vendingMachine.requestProduct("chips");
     }
     assertEquals(false, vendingMachine.checkIfProductIsInStock("chips"));
@@ -154,6 +159,7 @@ public class VendingMachineTest {
   @Test
   public void whenCandyIsNotInStockInventoryCheckOfCandyReturnsFalse() {
     while (vendingMachine.getCandyInventory() > 0) {
+      addOneHundredCents();
       vendingMachine.requestProduct("candy");
     }
     assertEquals(false, vendingMachine.checkIfProductIsInStock("candy"));
@@ -162,6 +168,7 @@ public class VendingMachineTest {
   @Test
   public void whenColaIsNotInStockColaRequestReturnsSoldOut() {
     while (vendingMachine.getColaInventory() > 0) {
+      addOneHundredCents();
       vendingMachine.requestProduct("cola");
     }
     assertEquals("SOLD OUT", vendingMachine.requestProduct("cola"));
@@ -170,6 +177,7 @@ public class VendingMachineTest {
   @Test
   public void whenChipsAreNotInStockChipsRequestReturnsSoldOut() {
     while (vendingMachine.getChipsInventory() > 0) {
+      addOneHundredCents();
       vendingMachine.requestProduct("chips");
     }
     assertEquals("SOLD OUT", vendingMachine.requestProduct("chips"));
@@ -178,9 +186,17 @@ public class VendingMachineTest {
   @Test
   public void whenCandyIsNotInStockCandyRequestReturnsSoldOut() {
     while (vendingMachine.getCandyInventory() > 0) {
+      addOneHundredCents();
       vendingMachine.requestProduct("candy");
     }
     assertEquals("SOLD OUT", vendingMachine.requestProduct("candy"));
+  }
+
+  @Test
+  public void whenInsufficientMoneyIsEnteredProductRequestReturnsPriceReminder() {
+    assertEquals("PRICE: $1.00", vendingMachine.requestProduct("cola"));
+    assertEquals("PRICE: $0.50", vendingMachine.requestProduct("chips"));
+    assertEquals("PRICE: $0.65", vendingMachine.requestProduct("candy"));
   }
 
 }

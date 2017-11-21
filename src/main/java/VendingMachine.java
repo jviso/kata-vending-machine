@@ -43,6 +43,9 @@ public class VendingMachine {
     if (!checkIfProductIsInStock(productString)) {
       return "SOLD OUT";
     }
+    if (!checkIfUserHasEnteredSufficientMoneyToBuyProduct(productString)) {
+      return String.format("PRICE: $%.2f", (getPrice(productString) / 100.0));
+    }
     switch (productString) {
       case "cola":
         currentColaInventory -= 1;
