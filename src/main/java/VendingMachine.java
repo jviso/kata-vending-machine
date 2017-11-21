@@ -40,31 +40,19 @@ public class VendingMachine {
   }
 
   public String requestProduct(String productString) {
+    if (!checkIfProductIsInStock(productString)) {
+      return "SOLD OUT";
+    }
     switch (productString) {
       case "cola":
-        if (!checkIfProductIsInStock(productString)) {
-          return "SOLD OUT";
-        }
-        else {
-          currentColaInventory -= 1;
-          return "COLA DISPENSED";
-        }
+        currentColaInventory -= 1;
+        return "COLA DISPENSED";
       case "chips":
-        if (!checkIfProductIsInStock(productString)) {
-          return "SOLD OUT";
-        }
-        else {
-          currentChipsInventory -= 1;
-          return "CHIPS DISPENSED";
-        }
+        currentChipsInventory -= 1;
+        return "CHIPS DISPENSED";
       case "candy":
-        if (!checkIfProductIsInStock(productString)) {
-          return "SOLD OUT";
-        }
-        else {
-          currentCandyInventory -= 1;
-          return "CANDY DISPENSED";
-        }
+        currentCandyInventory -= 1;
+        return "CANDY DISPENSED";
       default:
         return "ERROR: INVALID PRODUCT";
     }
