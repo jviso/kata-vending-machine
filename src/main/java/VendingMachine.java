@@ -68,7 +68,7 @@ public class VendingMachine {
     }
   }
 
-  public boolean checkInventory(String productString) {
+  public boolean checkIfProductIsInStock(String productString) {
     return true;
   }
 
