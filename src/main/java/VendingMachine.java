@@ -4,6 +4,7 @@ public class VendingMachine {
   private int currentColaInventory;
   private int currentChipsInventory;
   private int currentCandyInventory;
+  private String lastReturnCoinMessage;
 
   public VendingMachine() {
     currentColaInventory = 1;
@@ -25,6 +26,10 @@ public class VendingMachine {
 
   public int getCandyInventory() {
     return currentCandyInventory;
+  }
+
+  public String getLastReturnCoinMessage() {
+    return lastReturnCoinMessage;
   }
 
   public void addCoin(String coinString) {
@@ -53,12 +58,18 @@ public class VendingMachine {
     switch (productString) {
       case "cola":
         currentColaInventory -= 1;
+        currentTotalInCents -= 100;
+        returnAllCoins();
         return "COLA DISPENSED%nTHANK YOU";
       case "chips":
         currentChipsInventory -= 1;
+        currentTotalInCents -= 50;
+        returnAllCoins();
         return "CHIPS DISPENSED%nTHANK YOU";
       case "candy":
         currentCandyInventory -= 1;
+        currentTotalInCents -= 65;
+        returnAllCoins();
         return "CANDY DISPENSED%nTHANK YOU";
       default:
         return "ERROR: INVALID PRODUCT";
@@ -68,7 +79,8 @@ public class VendingMachine {
   public String returnAllCoins() {
     int previousTotalInCents = getCurrentTotalInCents();
     currentTotalInCents = 0;
-    return String.format("RETURNED: $%.2f", (previousTotalInCents / 100.0));
+    lastReturnCoinMessage = String.format("RETURNED: $%.2f", (previousTotalInCents / 100.0));
+    return lastReturnCoinMessage;
   }
 
   public int getPrice(String productString) {

@@ -205,4 +205,11 @@ public class VendingMachineTest {
     assertEquals("RETURNED: $1.00", vendingMachine.returnAllCoins());
   }
 
+  @Test
+  public void whenUserBuysProductExcessMoneyIsReturned() {
+    addOneHundredCents();
+    vendingMachine.requestProduct("candy");
+    assertEquals("RETURNED: $0.35", vendingMachine.getLastReturnCoinMessage());
+  }
+
 }
