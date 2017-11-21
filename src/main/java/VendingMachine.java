@@ -49,13 +49,13 @@ public class VendingMachine {
     switch (productString) {
       case "cola":
         currentColaInventory -= 1;
-        return "COLA DISPENSED";
+        return "COLA DISPENSED%nTHANK YOU";
       case "chips":
         currentChipsInventory -= 1;
-        return "CHIPS DISPENSED";
+        return "CHIPS DISPENSED%nTHANK YOU";
       case "candy":
         currentCandyInventory -= 1;
-        return "CANDY DISPENSED";
+        return "CANDY DISPENSED%nTHANK YOU";
       default:
         return "ERROR: INVALID PRODUCT";
     }
