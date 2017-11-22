@@ -4,12 +4,18 @@ public class VendingMachine {
   private int currentColaInventory;
   private int currentChipsInventory;
   private int currentCandyInventory;
+  private int currentNumberOfQuarters;
+  private int currentNumberOfDimes;
+  private int currentNumberOfNickels;
   private String lastReturnCoinMessage;
 
   public VendingMachine() {
     currentColaInventory = 1;
     currentChipsInventory = 1;
     currentCandyInventory = 1;
+    currentNumberOfQuarters = 3;
+    currentNumberOfDimes = 3;
+    currentNumberOfNickels = 3;
   }
 
   public int getCurrentTotalInCents() {
@@ -26,6 +32,18 @@ public class VendingMachine {
 
   public int getCandyInventory() {
     return currentCandyInventory;
+  }
+
+  public int getCurrentNumberOfQuarters() {
+    return currentNumberOfQuarters;
+  }
+
+  public int getCurrentNumberOfDimes() {
+    return currentNumberOfDimes;
+  }
+
+  public int getCurrentNumberOfNickels() {
+    return currentNumberOfNickels;
   }
 
   public String getLastReturnCoinMessage() {

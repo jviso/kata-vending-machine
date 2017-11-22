@@ -219,4 +219,11 @@ public class VendingMachineTest {
     assertEquals("RETURNED: $0.35", vendingMachine.getLastReturnCoinMessage());
   }
 
+  @Test
+  public void whenVendingMachineIsNewThereAreAtLeastThreeQuartersDimesAndNickelsStored() {
+    assertEquals(true, vendingMachine.getCurrentNumberOfQuarters() >= 3);
+    assertEquals(true, vendingMachine.getCurrentNumberOfDimes() >= 3);
+    assertEquals(true, vendingMachine.getCurrentNumberOfNickels() >= 3);
+  }
+
 }
