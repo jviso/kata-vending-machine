@@ -220,6 +220,11 @@ public class VendingMachineTest {
   }
 
   @Test
+  public void whenVendingMachineDisplays35CentsItFormatsTheOutput() {
+    assertEquals("$0.35", vendingMachine.formatCentsForOutput(35));
+  }
+
+  @Test
   public void whenVendingMachineIsNewThereAreAtLeastThreeQuartersDimesAndNickelsStored() {
     assertEquals(true, vendingMachine.getCurrentNumberOfQuarters() >= 3);
     assertEquals(true, vendingMachine.getCurrentNumberOfDimes() >= 3);

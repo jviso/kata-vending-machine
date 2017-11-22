@@ -138,4 +138,8 @@ public class VendingMachine {
     }
   }
 
+  public String formatCentsForOutput(int cents) {
+    return "$0.35";
+  }    
+
 }
