@@ -138,8 +138,15 @@ public class VendingMachine {
     return String.format("$%.2f", dollars);
   }
 
-  public int calculateQuartersToBeReturned(int totalToBeReturnedInCents) {
-    return 3;
+  public void returnQuarters() {
+    while ((getCurrentNumberOfQuarters() > 0) && (currentTotalInCents / 25 > 0)) {
+      currentNumberOfQuarters -= 1;
+      currentTotalInCents -= 25;
+    } 
+  }
+
+  public void setCurrentTotalInCents(int cents) {
+    currentTotalInCents = cents;
   }
 
 }

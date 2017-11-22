@@ -251,7 +251,18 @@ public class VendingMachineTest {
 
   @Test
   public void whenVendingMachineHasThreeQuartersAndNeedsToReturn100CentsItReturnsThreeQuarters() {
-    assertEquals(3, vendingMachine.calculateQuartersToBeReturned(100));
+    vendingMachine.setCurrentTotalInCents(100);
+    vendingMachine.returnQuarters();
+    assertEquals(25, vendingMachine.getCurrentTotalInCents());
+    assertEquals(0, vendingMachine.getCurrentNumberOfQuarters());
+  }
+
+  @Test
+  public void whenVendingMachineHasThreeQuartersAndNeedsToReturn25CentsItReturnsOneQuarter() {
+    vendingMachine.setCurrentTotalInCents(25);
+    vendingMachine.returnQuarters();
+    assertEquals(0, vendingMachine.getCurrentTotalInCents());
+    assertEquals(2, vendingMachine.getCurrentNumberOfQuarters());
   }
 
 }
