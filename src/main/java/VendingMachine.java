@@ -81,24 +81,24 @@ public class VendingMachine {
       case "cola":
         currentColaInventory -= 1;
         currentTotalInCents -= 100;
-        returnAllCoins();
+        returnCoinsForCurrentTotal();
         return "COLA DISPENSED%nTHANK YOU";
       case "chips":
         currentChipsInventory -= 1;
         currentTotalInCents -= 50;
-        returnAllCoins();
+        returnCoinsForCurrentTotal();
         return "CHIPS DISPENSED%nTHANK YOU";
       case "candy":
         currentCandyInventory -= 1;
         currentTotalInCents -= 65;
-        returnAllCoins();
+        returnCoinsForCurrentTotal();
         return "CANDY DISPENSED%nTHANK YOU";
       default:
         return "ERROR: INVALID PRODUCT";
     }
   }
 
-  public String returnAllCoins() {
+  public String returnCoinsForCurrentTotal() {
     int previousTotalInCents = getCurrentTotalInCents();
     currentTotalInCents = 0;
     lastReturnCoinMessage = String.format("RETURNED: $%.2f", (previousTotalInCents / 100.0));

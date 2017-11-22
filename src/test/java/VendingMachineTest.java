@@ -202,14 +202,14 @@ public class VendingMachineTest {
   @Test
   public void whenUserRequestsCoinReturnCurrentTotalIsSetToZero() {
     vendingMachine.addCoin("nickel");
-    vendingMachine.returnAllCoins();
+    vendingMachine.returnCoinsForCurrentTotal();
     assertEquals(0, vendingMachine.getCurrentTotalInCents());
   }
 
   @Test
   public void whenCoinsAreReturnedUserKnowsHowMuchMoneyIsReturned() {
     addOneHundredCents();
-    assertEquals("RETURNED: $1.00", vendingMachine.returnAllCoins());
+    assertEquals("RETURNED: $1.00", vendingMachine.returnCoinsForCurrentTotal());
   }
 
   @Test
