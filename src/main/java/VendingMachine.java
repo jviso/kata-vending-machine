@@ -53,12 +53,15 @@ public class VendingMachine {
   public String addCoin(String coinString) {
     if (coinString.equals("nickel")) {
       currentTotalInCents += 5;
+      currentNumberOfNickels += 1;
     }
     else if (coinString.equals("dime")) {
       currentTotalInCents += 10;
+      currentNumberOfDimes += 1;
     }
     else if (coinString.equals("quarter")) {
       currentTotalInCents += 25;
+      currentNumberOfQuarters += 1;
     }
     return String.format("$%.2f", (currentTotalInCents / 100.0));
   }

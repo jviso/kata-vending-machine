@@ -226,4 +226,17 @@ public class VendingMachineTest {
     assertEquals(true, vendingMachine.getCurrentNumberOfNickels() >= 3);
   }
 
+  @Test
+  public void whenUserInsertsCoinsVendingMachineAddsThemToCoinStorage() {
+    int initialNumberOfQuarters = vendingMachine.getCurrentNumberOfQuarters();
+    int initialNumberOfDimes = vendingMachine.getCurrentNumberOfDimes();
+    int initialNumberOfNickels = vendingMachine.getCurrentNumberOfNickels();
+    vendingMachine.addCoin("nickel");
+    vendingMachine.addCoin("dime");
+    vendingMachine.addCoin("quarter");
+    assertEquals(initialNumberOfQuarters + 1, vendingMachine.getCurrentNumberOfQuarters());
+    assertEquals(initialNumberOfDimes + 1, vendingMachine.getCurrentNumberOfDimes());
+    assertEquals(initialNumberOfNickels + 1, vendingMachine.getCurrentNumberOfNickels());
+  }
+
 }
