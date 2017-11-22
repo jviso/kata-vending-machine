@@ -249,4 +249,9 @@ public class VendingMachineTest {
     assertEquals(initialNumberOfNickels + 1, vendingMachine.getCurrentNumberOfNickels());
   }
 
+  @Test
+  public void whenVendingMachineHasThreeQuartersAndNeedsToReturn100CentsItReturnsThreeQuarters() {
+    assertEquals(3, vendingMachine.calculateQuartersToBeReturned(100));
+  }
+
 }
