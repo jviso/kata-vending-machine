@@ -139,7 +139,8 @@ public class VendingMachine {
   }
 
   public String formatCentsForOutput(int cents) {
-    return "$0.35";
-  }    
+    double dollars = cents / 100.0;
+    return String.format("$%.2f", dollars);
+  }
 
 }
