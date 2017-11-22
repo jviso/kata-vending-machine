@@ -63,7 +63,7 @@ public class VendingMachine {
       currentTotalInCents += 25;
       currentNumberOfQuarters += 1;
     }
-    return String.format("$%.2f", (currentTotalInCents / 100.0));
+    return formatCentsForOutput(currentTotalInCents);
   }
 
   public String requestProduct(String productString) {
@@ -71,7 +71,7 @@ public class VendingMachine {
       return "SOLD OUT";
     }
     if (!checkIfUserHasEnteredSufficientMoneyToBuyProduct(productString)) {
-      return String.format("PRICE: $%.2f", (getPrice(productString) / 100.0));
+      return "PRICE: " + formatCentsForOutput(getPrice(productString));
     }
     return dispenseProduct(productString);
   }
@@ -101,7 +101,7 @@ public class VendingMachine {
   public String returnCoinsForCurrentTotal() {
     int previousTotalInCents = getCurrentTotalInCents();
     currentTotalInCents = 0;
-    lastReturnCoinMessage = String.format("RETURNED: $%.2f", (previousTotalInCents / 100.0));
+    lastReturnCoinMessage = "RETURNED: " + formatCentsForOutput(previousTotalInCents);
     return lastReturnCoinMessage;
   }
 
