@@ -156,4 +156,9 @@ public class VendingMachine {
     }
   }
 
+  public void returnNickels() {
+    currentTotalInCents = 5;
+    currentNumberOfNickels = 0;
+  }
+
 }

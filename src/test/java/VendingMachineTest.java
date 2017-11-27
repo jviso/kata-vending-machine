@@ -281,4 +281,12 @@ public class VendingMachineTest {
     assertEquals(2, vendingMachine.getCurrentNumberOfDimes());
   }
 
+  @Test
+  public void whenVendingMachineHasThreeNickelsAndNeedsToReturn20CentsItReturnsThreeNickels() {
+    vendingMachine.setCurrentTotalInCents(20);
+    vendingMachine.returnNickels();
+    assertEquals(5, vendingMachine.getCurrentTotalInCents());
+    assertEquals(0, vendingMachine.getCurrentNumberOfNickels());
+  }
+
 }
