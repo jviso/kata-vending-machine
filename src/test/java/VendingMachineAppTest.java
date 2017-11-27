@@ -22,4 +22,13 @@ public class VendingMachineAppTest {
     assertNotNull(app.vendingMachine);
   }
 
+  @Test
+  public void whenVendingMachineAppCannotMakeChangeDisplayMessageIsExactChangeOnly() {
+    app.vendingMachine.setCurrentTotalInCents(45);
+    app.vendingMachine.returnDimes();
+    app.vendingMachine.returnNickels();
+    app.checkIfExactChangeIsNeeded();
+    assertEquals("EXACT CHANGE ONLY", app.getCurrentDisplayMessage());
+  }
+
 }
