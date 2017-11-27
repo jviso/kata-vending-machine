@@ -250,7 +250,7 @@ public class VendingMachineTest {
   }
 
   @Test
-  public void whenVendingMachineHasThreeQuartersAndNeedsToReturn100CentsItReturnsThreeQuarters() {
+  public void whenVendingMachineHasThreeQuartersAndNeedsToReturn100CentsInQuartersItReturnsThreeQuarters() {
     vendingMachine.setCurrentTotalInCents(100);
     vendingMachine.returnQuarters();
     assertEquals(25, vendingMachine.getCurrentTotalInCents());
@@ -258,7 +258,7 @@ public class VendingMachineTest {
   }
 
   @Test
-  public void whenVendingMachineHasThreeQuartersAndNeedsToReturn25CentsItReturnsOneQuarter() {
+  public void whenVendingMachineHasThreeQuartersAndNeedsToReturn25CentsInQuartersItReturnsOneQuarter() {
     vendingMachine.setCurrentTotalInCents(25);
     vendingMachine.returnQuarters();
     assertEquals(0, vendingMachine.getCurrentTotalInCents());
@@ -266,7 +266,7 @@ public class VendingMachineTest {
   }
 
   @Test
-  public void whenVendingMachineHasThreeDimesAndNeedsToReturn40CentsItReturnsThreeDimes() {
+  public void whenVendingMachineHasThreeDimesAndNeedsToReturn40CentsInDimesItReturnsThreeDimes() {
     vendingMachine.setCurrentTotalInCents(40);
     vendingMachine.returnDimes();
     assertEquals(10, vendingMachine.getCurrentTotalInCents());
@@ -274,7 +274,7 @@ public class VendingMachineTest {
   }
 
   @Test
-  public void whenVendingMachineHasThreeDimesAndNeedsToReturn10CentsItReturnsOneDime() {
+  public void whenVendingMachineHasThreeDimesAndNeedsToReturn10CentsInDimesItReturnsOneDime() {
     vendingMachine.setCurrentTotalInCents(10);
     vendingMachine.returnDimes();
     assertEquals(0, vendingMachine.getCurrentTotalInCents());
@@ -282,7 +282,7 @@ public class VendingMachineTest {
   }
 
   @Test
-  public void whenVendingMachineHasThreeNickelsAndNeedsToReturn20CentsItReturnsThreeNickels() {
+  public void whenVendingMachineHasThreeNickelsAndNeedsToReturn20CentsInNickelsItReturnsThreeNickels() {
     vendingMachine.setCurrentTotalInCents(20);
     vendingMachine.returnNickels();
     assertEquals(5, vendingMachine.getCurrentTotalInCents());
@@ -290,7 +290,7 @@ public class VendingMachineTest {
   }
 
   @Test
-  public void whenVendingMachineHasThreeNickelsAndNeedsToReturn5CentsItReturnsOneNickel() {
+  public void whenVendingMachineHasThreeNickelsAndNeedsToReturn5CentsInNickelsItReturnsOneNickel() {
     vendingMachine.setCurrentTotalInCents(5);
     vendingMachine.returnNickels();
     assertEquals(0, vendingMachine.getCurrentTotalInCents());
