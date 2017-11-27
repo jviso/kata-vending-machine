@@ -13,4 +13,5 @@ from the command line.
 Usage
 -----
 
-TBD.
+1. Change working directory to [project root]/build/classes/java/main
+2. Run '''java VendingMachineRun'''
