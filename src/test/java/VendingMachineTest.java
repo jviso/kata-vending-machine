@@ -273,4 +273,12 @@ public class VendingMachineTest {
     assertEquals(0, vendingMachine.getCurrentNumberOfDimes());
   }
 
+  @Test
+  public void whenVendingMachineHasThreeDimesAndNeedsToReturn10CentsItReturnsOneDime() {
+    vendingMachine.setCurrentTotalInCents(10);
+    vendingMachine.returnDimes();
+    assertEquals(0, vendingMachine.getCurrentTotalInCents());
+    assertEquals(2, vendingMachine.getCurrentNumberOfDimes());
+  }
+
 }

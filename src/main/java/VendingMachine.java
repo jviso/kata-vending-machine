@@ -150,8 +150,10 @@ public class VendingMachine {
   }
 
   public void returnDimes() {
-    currentTotalInCents = 10;
-    currentNumberOfDimes = 0;
+    while ((getCurrentNumberOfDimes() > 0) && (currentTotalInCents / 10 > 0)) {
+      currentNumberOfDimes -= 1;
+      currentTotalInCents -= 10;
+    }
   }
 
 }
