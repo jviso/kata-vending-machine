@@ -297,4 +297,14 @@ public class VendingMachineTest {
     assertEquals(2, vendingMachine.getCurrentNumberOfNickels());
   }
 
+  @Test
+  public void whenVendingMachineHasThreeOfEachCoinAndNeedsToReturn40CentsItReturnsOneOfEachCoin() {
+    vendingMachine.setCurrentTotalInCents(40);
+    vendingMachine.returnCoinsForCurrentTotal();
+    assertEquals(2, vendingMachine.getCurrentNumberOfQuarters());
+    assertEquals(2, vendingMachine.getCurrentNumberOfDimes());
+    assertEquals(2, vendingMachine.getCurrentNumberOfNickels());
+    assertEquals(0, vendingMachine.getCurrentTotalInCents());
+  }
+
 }

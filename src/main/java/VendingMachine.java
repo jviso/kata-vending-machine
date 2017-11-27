@@ -104,7 +104,9 @@ public class VendingMachine {
 
   public String returnCoinsForCurrentTotal() {
     int previousTotalInCents = getCurrentTotalInCents();
-    currentTotalInCents = 0;
+    returnQuarters();
+    returnDimes();
+    returnNickels();
     lastReturnCoinMessage = "RETURNED: " + formatCentsForOutput(previousTotalInCents);
     return lastReturnCoinMessage;
   }
