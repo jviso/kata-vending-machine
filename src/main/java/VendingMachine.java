@@ -22,6 +22,10 @@ public class VendingMachine {
     return currentTotalInCents;
   }
 
+  public void setCurrentTotalInCents(int cents) {
+    currentTotalInCents = cents;
+  }
+
   public int getColaInventory() {
     return currentColaInventory;
   }
@@ -145,8 +149,5 @@ public class VendingMachine {
     } 
   }
 
-  public void setCurrentTotalInCents(int cents) {
-    currentTotalInCents = cents;
-  }
 
 }
