@@ -86,17 +86,17 @@ public class VendingMachine {
         currentColaInventory -= 1;
         currentTotalInCents -= 100;
         returnCoinsForCurrentTotal();
-        return "COLA DISPENSED%nTHANK YOU";
+        return "COLA DISPENSED\nTHANK YOU";
       case "chips":
         currentChipsInventory -= 1;
         currentTotalInCents -= 50;
         returnCoinsForCurrentTotal();
-        return "CHIPS DISPENSED%nTHANK YOU";
+        return "CHIPS DISPENSED\nTHANK YOU";
       case "candy":
         currentCandyInventory -= 1;
         currentTotalInCents -= 65;
         returnCoinsForCurrentTotal();
-        return "CANDY DISPENSED%nTHANK YOU";
+        return "CANDY DISPENSED\nTHANK YOU";
       default:
         return "ERROR: INVALID PRODUCT";
     }
