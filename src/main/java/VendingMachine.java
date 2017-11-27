@@ -157,8 +157,10 @@ public class VendingMachine {
   }
 
   public void returnNickels() {
-    currentTotalInCents = 5;
-    currentNumberOfNickels = 0;
+    while ((getCurrentNumberOfNickels() > 0) && (currentTotalInCents / 5 > 0)) {
+      currentNumberOfNickels -= 1;
+      currentTotalInCents -= 5;
+    }
   }
 
 }
