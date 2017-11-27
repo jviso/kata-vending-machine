@@ -149,5 +149,9 @@ public class VendingMachine {
     } 
   }
 
+  public void returnDimes() {
+    currentTotalInCents = 10;
+    currentNumberOfDimes = 0;
+  }
 
 }

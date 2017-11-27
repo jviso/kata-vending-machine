@@ -265,4 +265,12 @@ public class VendingMachineTest {
     assertEquals(2, vendingMachine.getCurrentNumberOfQuarters());
   }
 
+  @Test
+  public void whenVendingMachineHasThreeDimesAndNeedsToReturn40CentsItReturnsThreeDimes() {
+    vendingMachine.setCurrentTotalInCents(40);
+    vendingMachine.returnDimes();
+    assertEquals(10, vendingMachine.getCurrentTotalInCents());
+    assertEquals(0, vendingMachine.getCurrentNumberOfDimes());
+  }
+
 }
